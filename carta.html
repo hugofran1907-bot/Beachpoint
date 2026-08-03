@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carta - Beach Point</title>
+<meta content="Explora nuestra extensa carta con mojitos exclusivos, cócteles elaborados, batidos naturales frescos y deliciosos nachos en Beach Point." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#000e0c",
+                        "secondary-container": "#f4dfcb",
+                        "on-secondary-fixed": "#241a0e",
+                        "outline-variant": "#c4c6cf",
+                        "secondary-fixed-dim": "#d7c3b0",
+                        "tertiary-fixed-dim": "#3adccc",
+                        "secondary-fixed": "#f4dfcb",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "on-primary-container": "#708ab5",
+                        "primary-container": "#002147",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed": "#001b3d",
+                        "on-surface-variant": "#44474e",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-container": "#002723",
+                        "on-tertiary-fixed": "#00201d",
+                        "inverse-primary": "#aec7f6",
+                        "primary": "#000a1e",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-tint": "#465f88",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#74777f",
+                        "on-secondary-container": "#716252",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed-dim": "#aec7f6",
+                        "surface-container-low": "#f3f3f4",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "primary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e2e2e2",
+                        "surface-dim": "#dadada",
+                        "secondary": "#6b5c4c",
+                        "on-tertiary-container": "#009a8e",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "on-secondary-fixed-variant": "#524436",
+                        "tertiary-fixed": "#61f9e9",
+                        "surface-container-high": "#e8e8e8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "80px",
+                        "margin-tablet": "40px",
+                        "stack-xl": "120px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "stack-md": "40px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "label-caps": ["Montserrat"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .menu-item-hover:hover .menu-line {
+            background-color: theme('colors.primary');
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-lg antialiased selection:bg-tertiary-fixed selection:text-tertiary">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-tertiary/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-secondary/40">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
+<a class="font-headline-md text-headline-md tracking-tighter text-primary dark:text-primary-fixed uppercase" href="index.html"><br/>BEACH POINT</a>
+<div class="hidden md:flex gap-8 items-center font-label-caps text-label-caps">
+<a class="text-primary dark:text-primary-fixed hover:text-on-tertiary-container transition-colors duration-300" href="index.html">Inicio</a>
+<a class="text-on-tertiary-container border-b-2 border-on-tertiary-container pb-1 transition-all duration-500" href="carta.html">Carta</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Header Section -->
+<header class="pt-32 pb-stack-xl md:pt-48 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<h1 class="font-display-lg-mobile md:font-display-lg text-primary mb-6 fade-in-up is-visible">La Carta</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto fade-in-up is-visible" style="transition-delay: 100ms;">Descubre nuestra cuidada selección de bebidas refrescantes y deliciosos bocados, creados para complementar perfectamente tu día junto al mar.</p>
+</div>
+</header>
+<!-- Menu Content Grid -->
+<main class="pb-stack-xl max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="columns-1 md:columns-2 gap-gutter space-y-stack-md">
+<!-- 🥤 BEBIDAS -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🥤 Bebidas</h2>
+<h3 class="font-headline-md text-secondary mb-4 mt-6">Agua</h3>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Agua</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Agua con gas</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,00 €</span>
+</div>
+</div>
+</div>
+<h3 class="font-headline-md text-secondary mb-4 mt-8">Refrescos</h3>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Sprite</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Coca-Cola</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Aquarius (Limón / Naranja)</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Nestea</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Mare Rosso</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Zumo (Piña / Melocotón / Naranja)</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,50 €</span>
+</div>
+</div>
+</div>
+<h3 class="font-headline-md text-secondary mb-4 mt-8">The Organics by Red Bull</h3>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Black Orange</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Tonic Water</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Purple Berry</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Easy Lemon</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Ginger Ale</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Ginger Beer</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,50 €</span>
+</div>
+</div>
+</div>
+<h3 class="font-headline-md text-secondary mb-4 mt-8">Energéticos</h3>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Red Bull</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Red Bull Sugar Free</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Red Bull Editions</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,00 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Sandía, Albaricoque/Fresa, Fruta del Dragón</p>
+</div>
+</div>
+</section>
+<!-- 🍸 CÓCTELES -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🍸 Cócteles</h2>
+<div class="space-y-6">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Mojito Ginger</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Ron, azúcar moreno, limón, menta y Ginger Ale</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Moscow Mule</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Vodka, lima exprimida y Ginger Beer</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Limoncello Spritz</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Limoncello, cava y Easy Lemon o Black Orange</p>
+</div>
+</div>
+<h3 class="font-headline-md text-secondary mb-4 mt-8">Family Beach Point</h3>
+<div class="space-y-6">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Melón Loco (2-3 personas)</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">15-25 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Melón, coco o maracuyá</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Sandía Loca (3-6 personas)</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">20-35 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Sandía, coco o maracuyá</p>
+</div>
+</div>
+</section>
+<!-- 🧃 ZUMOS FROZEN -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🧃 Zumos Frozen</h2>
+<div class="space-y-6">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Zumos Frozen</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">6,00 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Con o sin azúcar. Sabores: Sandía, Melocotón, Naranja, Plátano, Fresa, Maracuyá, Piña, Coco, Mango y Melón.</p>
+</div>
+</div>
+</section>
+<!-- 🥛 BATIDOS CON LECHE -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🥛 Batidos con Leche</h2>
+<div class="space-y-6">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Batidos</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">6,00 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Sabores: Chocolate, Canela, Vainilla, Sandía, Melón, Melocotón, Plátano, Fresa, Maracuyá, Piña, Coco y Mango.</p>
+</div>
+</div>
+</section>
+<!-- 🧊 GRANIZADOS Y DAIKIRIS -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🧊 Granizados y Daikiris</h2>
+<p class="text-on-surface-variant font-label-caps mb-6 tracking-widest">(Sin alcohol: 5,50 €)</p>
+<div class="space-y-6">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Blody Berry</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Fresa, Naranja, Maracuyá</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Tiki Wini</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Fresa, Limón</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Off Shore</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Piña, Melón, Maracuyá</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Reggae Jungle</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Sandía, Melón, Plátano, Maracuyá</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">San Francisco</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Piña, Naranja, Granadina</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Tijuana</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Sandía, Fresa, Menta</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Destornillador</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Whisky o Vodka, Naranja, Granadina</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Honolulu</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Piña, Fresa, Coco</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Piña Colada</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Piña, Coco, Havana 5</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Zagga</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Piña, Fresa, Maracuyá</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Jiggy Jis</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Melocotón, Fresa, Coco</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Tamarindo</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Melocotón, Fresa, Menta</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Tropical</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Piña, Mango</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Pink Panter</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Piña, Frambuesa</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Sex on the Beach</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Melocotón, Naranja, Granadina</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Oshuna</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Melón, Coco, Rives Exótic</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Gin Berry</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Fresa, Ginebra</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Malibú</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Malibú, Piña</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Exotic Tequila</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Fresa, Piña, Rives Exótic, Tequila José Cuervo Reposado</p>
+</div>
+</div>
+</section>
+<!-- 🌿 MOJITOS -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🌿 Mojitos</h2>
+<p class="text-on-surface-variant font-label-caps mb-6 tracking-widest">(Sin alcohol: 5,50 €)</p>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Clásico</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Mojito Beach Point</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fresa</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fresa - Plátano</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fresa - Maracuyá</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fresa - Melocotón</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Melón - Maracuyá</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Kiwi - Maracuyá</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Sandía</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Red Bull</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Sandía, Albaricoque, Fresa o Fruta del Dragón</p>
+</div>
+</div>
+<h3 class="font-headline-md text-secondary mb-4 mt-8">Mojitos Beach</h3>
+<div class="space-y-6">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Mamaito</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Kiwi, Chartreuse</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Mojicano</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Naranja, Canela, Tequila José Cuervo</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">De Vermouth</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Naranja, Canela</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Peach Smach</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">4 Roses, Melocotón o Piña, Arándanos</p>
+</div>
+</div>
+</section>
+<!-- 🍋 CAIPIRINHAS -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🍋 Caipirinhas</h2>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Clásica</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fresa</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fresa - Frambuesa</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fresa - Maracuyá</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Piña</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Piña - Frambuesa</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Piña - Maracuyá</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Kiwi</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 🍸 CAIPIROSKAS -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🍸 Caipiroskas</h2>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Clásica</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fresa</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fresa - Maracuyá</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fresa - Frambuesa</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Melón - Maracuyá</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Kiwi</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Kiwi - Maracuyá</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+</div>
+<h3 class="font-headline-md text-secondary mb-4 mt-8">Especiales</h3>
+<div class="space-y-6">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Black Russian</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Plátano, Fresa, Vodka Negro</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Red Russian</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Fresa, Frambuesa, Vodka Rojo</p>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Caipiruleta</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Amaretto, Granadina</p>
+</div>
+</div>
+</section>
+<!-- ☕ CAFÉS -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">☕ Cafés</h2>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Café Solo</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Cortado</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,10 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Café con Leche</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,60 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Café Americano</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">1,80 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Capuchino</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Café Frozen</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 🍺 CERVEZAS -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🍺 Cervezas</h2>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Estrella Galicia (1/3)</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Estrella Galicia 0,0 Tostada</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,70 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Salitos Pink</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">5,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Salitos Blue</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">5,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Coronita</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">4,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Desperados Mojito</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">3,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Caña 1906</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,90 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Champú (Clara)</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">2,90 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Jarra de Medio</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">4,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Jarra de Litro</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">5,00 €</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 🥃 LICORES -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🥃 Licores</h2>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Baileys</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">4,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Limoncello</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">4,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Jägermeister</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Licor 43</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Malibú</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Fernet Branca</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">6,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">José Cuervo</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">4,00 € / 8,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">El Patrón</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">6,00 € / 10,00 €</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 🥃 RON -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🥃 Ron</h2>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Arehucas Blanco</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Arehucas Miel</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Arehucas 7 Años</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Arehucas 5 Oro</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Arehucas 12 Años</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">10,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Havana 5</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Havana 7</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Barceló</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Cacique</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Brugal</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Negrita</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 🍸 GINEBRAS -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🍸 Ginebras</h2>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Beefeater</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Martin Miller's</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">12,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">London No.1</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">12,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Seagram's</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Bulldog</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">12,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Tanqueray</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Puerto de Indias</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Mombasa</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">14,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Nordés</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">10,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">G'Vine</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">12,00 €</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 🥃 WHISKY -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🥃 Whisky</h2>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Jack Daniel's</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">10,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Red Label</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Jameson</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">10,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Ballantine's</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">J&amp;B</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Cutty Sark</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">9,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Famous Grouse</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">8,00 €</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 🍸 VODKA -->
+<section class="break-inside-avoid mb-stack-lg fade-in-up is-visible">
+<h2 class="font-headline-lg text-primary border-b border-secondary/40 pb-4 mb-8">🍸 Vodka</h2>
+<div class="space-y-4">
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Smirnoff</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,00 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Absolut</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Absolut Peach</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+<div class="flex flex-col menu-item-hover">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-on-surface tracking-widest">Movskovskaya</span>
+<span class="flex-grow mx-4 h-[1px] bg-secondary-fixed-dim/40 menu-line transition-colors duration-300"></span>
+<span class="font-body-lg text-primary">7,50 €</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary dark:bg-tertiary-container w-full py-stack-lg border-t border-secondary/20 mt-stack-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left">
+<div class="md:col-span-6 mb-8 md:mb-0">
+<span class="font-headline-lg text-headline-lg text-secondary-fixed block mb-4 uppercase">BEACH POINT</span>
+</div>
+<div class="md:col-span-6 flex flex-col md:flex-row gap-6 md:justify-end font-body-md text-body-md">
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body></html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Beach Point Cambrils - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#000e0c",
+                        "secondary-container": "#f4dfcb",
+                        "on-secondary-fixed": "#241a0e",
+                        "outline-variant": "#c4c6cf",
+                        "secondary-fixed-dim": "#d7c3b0",
+                        "tertiary-fixed-dim": "#3adccc",
+                        "secondary-fixed": "#f4dfcb",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "on-primary-container": "#708ab5",
+                        "primary-container": "#002147",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed": "#001b3d",
+                        "on-surface-variant": "#44474e",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-container": "#002723",
+                        "on-tertiary-fixed": "#00201d",
+                        "inverse-primary": "#aec7f6",
+                        "primary": "#000a1e",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-tint": "#465f88",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#74777f",
+                        "on-secondary-container": "#716252",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed-dim": "#aec7f6",
+                        "surface-container-low": "#f3f3f4",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "primary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e2e2e2",
+                        "surface-dim": "#dadada",
+                        "secondary": "#6b5c4c",
+                        "on-tertiary-container": "#009a8e",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "on-secondary-fixed-variant": "#524436",
+                        "tertiary-fixed": "#61f9e9",
+                        "surface-container-high": "#e8e8e8"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "stack-lg": "80px",
+                        "margin-tablet": "40px",
+                        "stack-xl": "120px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "stack-md": "40px",
+                        "margin-desktop": "80px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "label-caps": ["Montserrat"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Montserrat"]
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-lg": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.8", letterSpacing: "0.01em", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "1.0", letterSpacing: "0.15em", fontWeight: "600" }],
+                        "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "600" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .nav-transition {
+            transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scrolled-nav {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 4px 20px rgba(0, 33, 71, 0.05);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 nav-transition bg-surface/90" id="navbar">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20 border-b border-secondary/40">
+<div class="font-headline-md text-headline-md tracking-tighter text-on-surface">
+                BEACH POINT
+            </div>
+<div class="hidden md:flex items-center space-x-gutter">
+<a class="font-label-caps text-label-caps text-on-tertiary-container border-b-2 border-on-tertiary-container pb-1 transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1)" href="index.html">Inicio</a>
+<a class="font-label-caps text-label-caps text-primary hover:text-on-tertiary-container transition-colors duration-300" href="carta.html">Carta</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A breathtaking sunset view over a high-end coastal beach club in Cambrils, featuring elegant wooden decking, sophisticated white and sand-colored outdoor furniture, warm atmospheric lighting, and a serene ocean backdrop. A luxurious and aspirational summer evening aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnXlSwF8c3HaB1Twu9tg9WYPHJwbmuVx0UKq702Z5SgEWik4-b9gCCsa0ciMIPDQ-jiThYLL5k2UlFE7AzBQPn5s_MDvwRadCayynBGWwuRkiwKDNyxD9NgCx18OGnLJGKoTtXwJlz8W49t2T_cfsjURbpFm5OtOS7e6bnMTm5Lcv_G6M0R3Elf6h9uPotLOoUaq2i7LubxLhTVK0JHExv70Zx8rd9trRCcASxsdn0JN-C0a00NhtFLJYvSGdCvf_f0Z4VnuuiirZFgA"/>
+<div class="absolute inset-0 bg-black/30"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto fade-in-up visible">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-6">
+                Beach Point
+            </h1>
+<p class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-on-primary/90 mb-10 max-w-2xl mx-auto">Donde el Mediterráneo se encuentra con la elegancia refinada. Disfruta de una experiencia gastronómica excepcional con el sonido de las olas como banda sonora.</p>
+<a class="inline-block bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 hover:bg-tertiary-container transition-colors duration-300 ease-in-out" href="carta.html">
+                VER CARTA
+            </a>
+</div>
+</header>
+<!-- Nuestra Historia -->
+<section class="py-stack-md md:py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-gutter items-center">
+<div class="md:col-span-5 fade-in-up visible">
+<div class="relative rounded-sm">
+<img alt="Beach Point Cambrils Official Logo" class="w-full h-auto object-contain p-4 md:p-8 bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxRI3Fs9FdEvt5cYx69wL57vWbkHRDCToBvfDwhO72wOrlKYpQExz_ammGWY7RNz0mLoh27g-2pMRerLBkom-yLEREWe3eGeA-euAB8T-IOkDCWJZ0dskyWaSvzdCsBnpmkkmjRAqGLpuIuqhj86ewOPRJxK9lEKc7FwrgTYb3-lWBgAYA9DnwrL8ORbmfbpQZlgT8ooLerdtoqiXu0RXhOEL4hIpsAWkcyIdLMGvsqQUoWcYPnlbAF3vpUrhPtYzukJ_M9gnNvtfTdw"/>
+</div>
+</div>
+<div class="md:col-span-6 md:col-start-7 fade-in-up visible" style="transition-delay: 200ms;">
+<h2 class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg text-primary mb-6 md:mb-8">
+                    Nuestra Historia
+                </h2>
+<div class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-on-surface-variant space-y-6">
+<p class="">
+                        Nacidos de la pasión por el mar y la buena mesa, Beach Point Cambrils es el resultado de un sueño compartido. Nuestro objetivo es ofrecer un refugio donde la gastronomía de calidad se funde con el entorno inigualable de la costa dorada.
+                    </p>
+<p class="">
+                        Cada detalle ha sido cuidadosamente pensado para crear un ambiente sofisticado pero relajado, invitándole a desconectar y disfrutar de los placeres sencillos con un toque de exclusividad.
+                    </p>
+</div>
+</div>
+</div>
+</section><section class="py-stack-md md:py-stack-xl bg-surface px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<!-- Nuestro Objetivo: Full-width Centered -->
+<div class="text-center max-w-3xl mx-auto mb-16 md:mb-24 fade-in-up visible">
+<span class="material-symbols-outlined text-on-tertiary-container mb-4 md:mb-6 text-headline-md">target</span>
+<h2 class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg text-primary mb-4 md:mb-6">Nuestro Objetivo</h2>
+<p class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-on-surface-variant">
+        Nuestro objetivo es darte el cóctel perfecto, el batido más refrescante, tu combinado más loco... que junto a una variedad de buena música, te harán disfrutar del día y de la noche. Ven, siéntate y disfruta de en este lugar tan particular, junto al marco incomparable de las playas de Cambrils.
+      </p>
+</div>
+<!-- 2x2 Grid for Categories -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-16 md:gap-y-24">
+<!-- Mojitos -->
+<div class="fade-in-up visible flex flex-col">
+<div class="aspect-square overflow-hidden mb-6 md:mb-8 rounded-sm">
+<img alt="Mojitos selection" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_7gPCgAZtq7rsxXvZxe-HbtdEPcUs-wgVYcY-4oOt2GdaZqLpC1QRzum5MyVk3hHPf4YyT7IjzBEnGBomhxOF2tLhNQMVgXsYRRU7UfsVpkN50Wn3J7AQxxwVs35hbiEJe0GX1XY8zWd5crBekP_geRzNE4UZ6H-UcDHIdAyn0vO3i_AlhkwK9-DoLvkDTnYDsS0fBkBGOBM-ca49IRInq-YgnfHHvRXyfsTJ_OjbIWZKP4rlkcrFBAmkFuQo4B1ipA"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Mojitos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          MOJITOS con la mejor selección: Ron Canario Arehucas. Ron nacido en las Islas Canarias, el cual posee una combinación de aromas y sabores que junto a un añejamiento ralentizado y a una cuidada elaboración con su ingrediente fundamental, la caña de azúcar, lo hacen sencillamente especial.
+        </p>
+</div>
+<!-- Batidos Naturales y Cócteles -->
+<div class="fade-in-up visible flex flex-col">
+<div class="aspect-square overflow-hidden mb-6 md:mb-8 rounded-sm">
+<img alt="Batidos Naturales y Cócteles" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO3PtzTF4uBb3OSNdbGrOypJ9BYOtF8fRZ_jLmz1RIKILxjJKDouT99AO5mvYWuu1GxuHnMKG1vOeiX7haGFwkfq5uNrYhhzOuyGuG1bChESTrl9VpWSoYwd_dalcB-yIF9NyXXKLBZ6bCgAxfwtf52yhhayTCTLLoFTuwgdQ2wdXi65e7Q5Kj8maLfaaeTWElyxkIPZz2BHDsVxVtGmzN69gLFLoGdJX_nSVOgiNrlbKvaWLE7sHgjScBQZazXaYf_A"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Batidos Naturales y Cócteles</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          BATIDOS NATURALES Y CÓCTELES con fruta cuidadosamente seleccionada a diario. BEACH POINT también es ese lugar ideal para disfrutar con toda la familia a esas horas en las que el calor del verano aprieta...o en esas noches estivales en las que al acabar de cenar te apetece disfrutar de algo sano y refrescante.
+        </p>
+</div>
+<!-- Beach Nachos -->
+<div class="fade-in-up visible flex flex-col">
+<div class="aspect-square overflow-hidden mb-6 md:mb-8 rounded-sm">
+<img alt="Beach Nachos" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWZq6jcw5JqNY59nzTbZ0oEMCe2Q_so8pJP-MXVivp0Efjs4u4HNAIhNwqBMmpLhzKIR4a-gmIad05Q_kOCq3tKm8MOERdp33g6I3vbgQBqmIpFyPzPVHlTuEJ6lJBy0OwaqzhG8fDoizhW5d8Dffmf5ZNNqkeei0sW1WNsIQNep8ryJKQ2ESwHXJ0KNtC9queZx6MVD2B8PGU7nf872CGVVfRhpH2DHHqK5vMdS2l4SEZdlOiP9wRUJnF-jKNw6N3Ng"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Beach Nachos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          BEACH NACHOS una receta original. Disfruta de unos sabrosos nachos al más veraniego estilo mexicano....con su pico de gallo, sus jalapeños suavemente picantes y cortados en finas rodajas, el crocante de cebolla morada, un queso fundido en su punto y algún que otro toque propio, no te los puedes perder...deliciosamente refrescantes.
+        </p>
+</div>
+<!-- Dardos -->
+<div class="fade-in-up visible flex flex-col">
+<div class="aspect-square overflow-hidden mb-6 md:mb-8 rounded-sm">
+<img alt="Dardos area" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT5ZmwlliTnUiCXhXXW0ZLbmkszHm_HcjwzaDffMCdIgtJJ2cTjZhZ6h2Fce0KYa0Wc1UGOw4KPbu0WpJut5Hm1M1TdjXPJRjvvClGB8jRW1nzRHXwli41sc9qR_mOH4Xs_2pbFDQhRp0vOAwHvQrsXMHGyGyL-P-rccqkH45F_TjRMCqX23Q476Y_WTWJxkeTKPfq5szp5fcKbMWa6y1Lqf0X9C6DGUrPa0atS5C18nZFVX2BF7_Z4t0RU94QiCD13g"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Dardos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Pasa al interior del local y disfruta de un rato entretenido jugando a los dardos con tus amigos, familiares y conocidos consiguiendo desconectar y salir de la rutina, siempre acompañados de buena música.
+        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<section class="py-stack-md md:py-stack-xl bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto fade-in-up visible">
+<div class="text-center mb-12 md:mb-16">
+<h2 class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg text-primary mb-4">Reseñas</h2>
+<div class="h-px w-24 bg-on-tertiary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-gutter mb-12">
+<!-- Review Card 1 -->
+<div class="bg-surface p-6 md:p-8 border border-secondary/10 hover:border-on-tertiary-container/30 transition-all duration-300 group">
+<div class="flex items-center space-x-1 text-on-tertiary-container mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                        "Un lugar excepcional. La comida es exquisita, el ambiente inmejorable y las vistas al atardecer son simplemente mágicas. Sin duda, el mejor beach club de Cambrils."
+                    </p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/50 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A small, professional portrait photo of a smiling customer in a relaxed, well-lit environment, suitable for a high-end testimonial avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF_ocY3ogL-4ukHBKw6FhaXLKFWwBKawAvy0zxTAudzdypicYIOtZLjllsKpFyIICFfKFv_Ejxh2uURzwpjfTGyMhrM1M4Iu30g3OPfDKl6klyLpd96vsx-XbkXLKtEWqE4fpn5K7p2KsqlloZ4Ss6mc2B1VmxLo-PVbss_pYq-iqN7-ROz2kUUI8k29kwbHGwMwghROqhpfopuYoV4GrfplM9oTjA4lenGJZibbX8Ls3W0iD_rX-A"/>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-primary">Maria S.</p>
+</div>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-surface p-6 md:p-8 border border-secondary/10 hover:border-on-tertiary-container/30 transition-all duration-300 group">
+<div class="flex items-center space-x-1 text-on-tertiary-container mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                        "Atención de primera clase. Los cócteles son fantásticos y el diseño del lugar te hace sentir en un oasis de lujo relajado."
+                    </p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/50 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A small, professional portrait photo of a customer in a smart-casual setting, suitable for a premium testimonial avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSVMHsRjDAL9kWMl9FP19yPWeCY9OpGV9j5ruvCZZlQg_qsEQAsZQa5AQJjeI7Ra_rlml0v3P_ioDs0Y-4sWpWvGhGBFgUZWYlkgxJts29foKg532PdEM7qs3IIQonSbWsyA8hPrkvsrwC4UILyhKeJemMFobzDljSzVVHKLTHIfC6wIbOoh9E7wLneCfj2AmUYYYbXEEwXEqeTFsmRgEvHZ4Z_cB2yjGFRL3p2kIOze9HYmIM8Nvn"/>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-primary">Carlos R.</p>
+</div>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="bg-surface p-6 md:p-8 border border-secondary/10 hover:border-on-tertiary-container/30 transition-all duration-300 group">
+<div class="flex items-center space-x-1 text-on-tertiary-container mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                        "Una experiencia gastronómica brillante frente al mar. La presentación de los platos y el sabor demuestran un nivel superior."
+                    </p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/50 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A small, elegant profile picture of a customer, bathed in soft, natural light, ideal for a luxury brand review section." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS5_f1j2GqiuscxgEcL7qm4pFSMnGf8-K_3byWxgvMgVQTfZJgIEMlccdsfWs0EaXTUhBufBPnEImnpugJWEjISH4iS5TmElpAa_2gC-0J8P6T9Jm-cPHpZMx7hqgpnIZTQC8gtz1quheS-VwKlSfaygcwYYxQ6cW7stVk1reb0DzoBnEs-Ss7LEYwPUYya_oF8SP8agfL2EZTlZg3KgXc-9GU480cf4Fz3tKhdS_JGp8-XgSFY53f"/>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-primary">Elena G.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center">
+<a class="inline-flex items-center justify-center font-label-caps text-label-caps text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-on-primary transition-colors duration-300" href="https://www.google.com/maps/search/Beach+Point+Cambrils+reviews" rel="noopener noreferrer" target="_blank">
+                    Ver todas las reseñas en Google
+                </a>
+</div>
+</div>
+</section>
+<!-- Contact & Map -->
+<section class="py-stack-md md:py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-gutter">
+<div class="fade-in-up flex flex-col justify-center md:pr-8 visible">
+<h2 class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg text-primary mb-8 md:mb-10">CONTÁCTANOS</h2>
+<div class="space-y-8 font-body-md text-body-md text-on-surface-variant"><div class="mb-8"><h3 class="font-headline-md text-headline-md text-primary mb-2">¿Dónde estamos?</h3><p class="font-body-md">Avinguda Diputació 18, 43850 Cambrils, Tarragona</p></div><div class="space-y-6"><div class="flex items-start"><span class="material-symbols-outlined text-on-tertiary-container mr-4 mt-1">info</span><div><p class="font-label-caps text-label-caps text-primary mb-1">BEACH POINT</p><p class="">(+34) 609661159<br/>beachpointcmb@gmail.com</p></div></div><div class="flex items-start"><span class="material-symbols-outlined text-on-tertiary-container mr-4 mt-1">schedule</span><div><p class="font-label-caps text-label-caps text-primary mb-1">NUESTROS HORARIOS</p><p class="">Domingo a Jueves de 12:00 a 03:00 horas<br/>Viernes y Sábado de 12:00 a 03:30 horas</p></div></div></div></div>
+</div>
+<div class="h-[300px] md:h-[500px] bg-surface-variant rounded-sm overflow-hidden fade-in-up visible" style="transition-delay: 200ms;">
+<a class="block h-full w-full" href="https://maps.app.goo.gl/B9F5Y7V6XGZ7mD1X9" rel="noopener noreferrer" target="_blank"><img class="w-full h-full object-cover" data-alt="Full color map showing Beach Point Cambrils at Avinguda Diputació 18" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaGe1yxePMACLgd7ciMw2R7isFBrZ1q8DCuQpIFQAO8h0KVew1lmDIAL6lYAP9kaeQnVBsj94MHtQsTb4M9HfR6R2AYkyL6R-76TMAokSI_VhDDn4lgb52rXZAxN5MK5EIeIj-tJk1_XfamhwwOW9sBC4sScpML8uep7dtD02nswmMpqah08mSz5sNQ7_1ieQl5AGwyYyqbQB-gceLjAa0SDCMMj4BIth68Nok_xrmCUiyK2BGmKiD"/></a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-tertiary text-secondary-fixed w-full py-stack-md md:py-stack-lg border-t border-secondary/20">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left">
+<div class="md:col-span-4 mb-4 md:mb-0">
+<div class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg text-secondary-fixed mb-4">
+                    BEACH POINT
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        const heroTitle = document.querySelector('.text-display-lg');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled-nav');
+                navbar.classList.remove('bg-transparent');
+                
+                // Adjust text colors for light background nav
+                const navLinks = navbar.querySelectorAll('.text-on-primary, .text-primary');
+                const logo = navbar.querySelector('.text-on-surface');
+                
+            } else {
+                navbar.classList.remove('scrolled-nav');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((elem) => {
+            observer.observe(elem);
+        });
+        
+        // Trigger initial fade in for hero
+        setTimeout(() => {
+            document.querySelectorAll('.fade-in-up').forEach((elem) => {
+                if(elem.getBoundingClientRect().top < window.innerHeight) {
+                    elem.classList.add('visible');
+                }
+            });
+        }, 100);
+    </script>
+</body></html>
